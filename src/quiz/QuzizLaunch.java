@@ -8,6 +8,14 @@ import java.util.Scanner;
 public class QuzizLaunch extends Quiziz {
     public static void main(String[] args) {
     }
+
+    private static void run(){
+        greet();
+        askUsername();
+        chooseTopic();
+
+    }
+
     private static String askUsername(){
         Quiziz quiziz = new Quiziz();
         Scanner scanner = new Scanner(System.in);
