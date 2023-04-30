@@ -17,5 +17,11 @@ public class QuzizLaunch extends Quiziz {
 
         return quiziz.getName();
     }
+    private static void greet(){
+        Quiziz quiziz = new Quiziz();
+        System.out.println("Привіт " + quiziz.getName() +  """
+                Це Quizizoo гра !
+                """);
+    }
 }
 
