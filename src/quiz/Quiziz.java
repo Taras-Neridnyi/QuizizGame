@@ -14,7 +14,7 @@ class Quiziz {
      */
     private static String username ;
     private static String topic;
-    private static LinkedList<String> topics = new LinkedList<>(){{
+    private static LinkedList<String>  topics = new LinkedList<>(){{
         add("Math");
         add("Programming");
         add("football");
@@ -66,11 +66,11 @@ class Quiziz {
     private static void askTopic(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
-                ok , тепер виберу одну з трьох тем для квізу: 
+                ok , тепер виберу одну з трьох тем для квізу:
                 1 - Математика
                 2 - Футбол
                 3 - Програмування
-                    Для вибору можеш писати цифру або любе з цих слів 
+                    Для вибору можеш писати цифру або любе з цих слів
                 """);
         String topic = scanner.nextLine();
         setTopic(topic);
@@ -89,7 +89,7 @@ class Quiziz {
             System.out.println("+++");
             setTopic(topics.get(2));
         }else {
-            System.out.println("error in calibrate topic");;
+            System.out.println("error in calibrate topic");
         }
 
     }
