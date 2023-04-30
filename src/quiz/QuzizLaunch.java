@@ -23,5 +23,9 @@ public class QuzizLaunch extends Quiziz {
                 Це Quizizoo гра !
                 """);
     }
+
+    private static String chooseTopic(){
+        return "";
+    }
 }
 
