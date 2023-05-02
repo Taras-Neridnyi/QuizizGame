@@ -26,6 +26,18 @@ class Quiziz {
         put("(2+6)-(3+4) * ((3+4)-(2+3)) =","2");
     }};
 
+    private static HashMap<String , String > questionsAndAnswersProgramming = new HashMap<>(){{
+        put("Хто створив java ?" , "Джеймс Гослінг");
+        put("У котрому році ? " , "1995");
+        put("У java є oop ?","так");
+    }};
+
+    private static HashMap<String , String > questionsAndAnswersFootball = new HashMap<>(){{
+        put("Мессі і ......." , "Роналду");
+        put("Зінченко у команді ......." , "Арсенал");
+        put("Гравців у полі ..","22");
+    }};
+
     /*
         getters and setters
      */
