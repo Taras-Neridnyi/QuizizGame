@@ -1,5 +1,6 @@
 package quiz;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -14,10 +15,15 @@ class Quiziz {
      */
     private static String username ;
     private static String topic;
-    private static LinkedList<String>  topics = new LinkedList<>(){{
+    private static LinkedList<String> topics = new LinkedList<>(){{
         add("Math");
         add("Programming");
         add("football");
+    }};
+    private static HashMap<String , String > questionsAndAnswersMath = new HashMap<>(){{
+        put("Скільки буде 2+2*32+4-2 ? " , "68");
+        put("Прямий кут дорівнює (градусів)" , "90");
+        put("(2+6)-(3+4) * ((3+4)-(2+3)) =","2");
     }};
 
     /*
@@ -70,7 +76,7 @@ class Quiziz {
                 1 - Математика
                 2 - Футбол
                 3 - Програмування
-                    Для вибору можеш писати цифру або любе з цих слів
+                       Для вибору можеш писати цифру або любе з цих слів
                 """);
         String topic = scanner.nextLine();
         setTopic(topic);
