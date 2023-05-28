@@ -5,4 +5,4 @@
 ### - have a quality spent time  
 ### - boost your brain to the max
 ### - explore your knowledge 
-### - get errors to fix them
+### - get note and fix your result if you wil
