@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class QuzizLaunch extends Quiziz {
     public static void main(String[] args) {
-        run();
+       run();
     }
 
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a08376d9-b292-4a63-89ce-74c15249ae5b" name="Changes" comment="Added getters &amp; setters for name,topic fields,2 constructors">
+    <list default="true" id="a08376d9-b292-4a63-89ce-74c15249ae5b" name="Changes" comment="add HashMap's for football and programming Q&amp;A">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/quiz/Quiziz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/Quiziz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/quiz/QuzizLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/QuzizLaunch.java" afterDir="false" />
@@ -22,6 +22,17 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Taras-Neridnyi" />
+        <option value="Taras-Neridnyi &lt;t.neridniy@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -96,13 +107,101 @@
       <option name="project" value="LOCAL" />
       <updated>1682710613850</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add str askUserName method">
+      <created>1682869944480</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682869944480</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add void greet method">
+      <created>1682870001352</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682870001352</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add void chooseTopic method template">
+      <created>1682870059241</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682870059241</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add void run method">
+      <created>1682870104058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682870104058</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update Quiziz class(delete unused code)">
+      <created>1682870518849</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682870518849</updated>
+    </task>
+    <task id="LOCAL-00009" summary="move method from QuizizLaunch to Quiziz">
+      <created>1682870662154</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682870662154</updated>
+    </task>
+    <task id="LOCAL-00010" summary="readd getters and setters for topic,username fields">
+      <created>1682871073992</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682871073992</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add calibrateTopic method , update askTopic method">
+      <created>1682872518881</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682872518881</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix some bugs">
+      <created>1682872636011</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682872636011</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add HashMap for Math Q&amp;A">
+      <created>1683053320731</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683053320731</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add HashMap's for football and programming Q&amp;A">
+      <created>1683054041499</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683054041499</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added 2 classes Quiziz , QuizizLaunch," />
     <MESSAGE value="added photo" />
     <MESSAGE value="Added getters &amp; setters for name,topic fields,2 constructors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added getters &amp; setters for name,topic fields,2 constructors" />
+    <MESSAGE value="add str askUserName method" />
+    <MESSAGE value="add void greet method" />
+    <MESSAGE value="add void chooseTopic method template" />
+    <MESSAGE value="add void run method" />
+    <MESSAGE value="update Quiziz class(delete unused code)" />
+    <MESSAGE value="move method from QuizizLaunch to Quiziz" />
+    <MESSAGE value="readd getters and setters for topic,username fields" />
+    <MESSAGE value="add calibrateTopic method , update askTopic method" />
+    <MESSAGE value="fix some bugs" />
+    <MESSAGE value="add HashMap for Math Q&amp;A" />
+    <MESSAGE value="add HashMap's for football and programming Q&amp;A" />
+    <option name="LAST_COMMIT_MESSAGE" value="add HashMap's for football and programming Q&amp;A" />
   </component>
 </project>
