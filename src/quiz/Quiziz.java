@@ -135,14 +135,14 @@ class Quiziz {
         if (getTopic().contentEquals(topics.getFirst())) {
             askMath();
         } else if (getTopic().contentEquals(topics.get(1))) {
-            // askProgramming
+            askProgramming();
         } else if (getTopic().contentEquals(topics.getLast())) {
-            // askFootball
+            askFootball();
         }
     }
 
-    private static void askMath() {
 
+    private static void askMath() {
         int note = 0;
         int k = 0;
 
@@ -153,10 +153,69 @@ class Quiziz {
             String ask = scanner.nextLine();
 
             k++;
-
-            if (!(ask.equals("68") || ask.equals("2") || ask.equals("90"))) {
-            }else {
+            if ((ask.equals("2") && k == 1)) {
                 note++;
+            }
+            else if ((ask.equals("68") && k == 2)) {
+                note++;
+            }
+            else if ((ask.equals("90") && k == 3)) {
+                note++;
+            }else {
+            }
+        }
+
+        System.out.println("Твій результат : " + note + " з 3 ." + " " + (note > 0 && note < 3 ? "Це теж позитивна оцінка !"
+                : note == 0 ? "Погано" : "Супер!"));
+    }
+
+    private static void askFootball() {
+        int note = 0;
+        int k = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        for (var i :
+                questionsAndAnswersFootball.keySet()) {
+            System.out.print(i + " ");
+            String ask = scanner.nextLine();
+
+            k++;
+            if ((ask.equals("Роналду") && k == 1)) {
+                note++;
+            }
+            else if ((ask.equals("Арсенал") && k == 2)) {
+                note++;
+            }
+            else if ((ask.equals("22") && k == 3)) {
+                note++;
+            }else {
+            }
+        }
+
+        System.out.println("Твій результат : " + note + " з 3 ." + " " + (note > 0 && note < 3 ? "Це теж позитивна оцінка !"
+                : note == 0 ? "Погано" : "Супер!"));
+    }
+
+    private static void askProgramming() {
+        int note = 0;
+        int k = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        for (var i :
+                questionsAndAnswersProgramming.keySet()) {
+            System.out.print(i + " ");
+            String ask = scanner.nextLine();
+
+            k++;
+            if ((ask.equals("Джеймс Гослінг") && k == 1)) {
+                note++;
+            }
+            else if ((ask.equals("1995") && k == 2)) {
+                note++;
+            }
+            else if ((ask.equals("так") && k == 3)) {
+                note++;
+            }else {
             }
         }
 
