@@ -15,22 +15,22 @@ class Quiziz {
     private static String topic;
     private static int note;
 
-    private static LinkedList<String> topics = new LinkedList<>(List.of("Math" , "Progamming" , "football"));
+    private static LinkedList<String> topics = new LinkedList<>(List.of("Math", "Progamming", "football"));
 
     private static Map<String, String> questionsAndAnswersMath = new HashMap<>(
-            Map.of("Скільки буде 2+2*32+4-2 ? " , "68" ,
-                    "Прямий кут дорівнює (градусів)", "90" ,
-                    "(2+6)-(3+4) * ((3+4)-(2+3)) =" , "2"));
+            Map.of("Скільки буде 2+2*32+4-2 ? ", "68",
+                    "Прямий кут дорівнює (градусів)", "90",
+                    "(2+6)-(3+4) * ((3+4)-(2+3)) =", "2"));
 
     private static Map<String, String> questionsAndAnswersProgramming = new HashMap<>(
-            Map.of("Хто створив java ?", "Джеймс Гослінг" ,
+            Map.of("Хто створив java ?", "Джеймс Гослінг",
                     "У котрому році ? ", "1995",
                     "У java є oop ?", "так"));
 
     private static Map<String, String> questionsAndAnswersFootball = new HashMap<>(
-            Map.of("Мессі і .......", "Роналду" ,
-                    "Зінченко у команді .......", "Арсенал" ,
-                    "Гравців у полі ..", "22" ));
+            Map.of("Мессі і .......", "Роналду",
+                    "Зінченко у команді .......", "Арсенал",
+                    "Гравців у полі ..", "22"));
 
     /*
         getters and setters
@@ -43,6 +43,7 @@ class Quiziz {
     public static void setNote(int note) {
         Quiziz.note = note;
     }
+
     public static String getTopic() {
         return topic;
     }
@@ -64,7 +65,6 @@ class Quiziz {
      */
 
     protected static void run() {
-
         askUsername();
         greet();
         askTopic();
@@ -72,16 +72,16 @@ class Quiziz {
         doBetterResults();
     }
 
-    private static void doBetterResults(){
-        while (true){
+    private static void doBetterResults() {
+        while (true) {
             Scanner scanner = new Scanner(System.in);
-            if (getNote()<3) {
+            if (getNote() < 3) {
                 System.out.println("Бажаєте покращити результати ?(y/n)");
                 String userResponse = scanner.nextLine().strip().toLowerCase();
-                if(!(userResponse.equals("y"))){
+                if (!(userResponse.equals("y"))) {
                     System.out.println("Тоді до зустрічі !");
                     break;
-                }else {
+                } else {
                     greet();
                     askTopic();
                     askQuestion();
@@ -89,8 +89,6 @@ class Quiziz {
             }
         }
     }
-
-
 
     private static void askUsername() {
         Scanner scanner = new Scanner(System.in);
@@ -120,44 +118,51 @@ class Quiziz {
     }
 
     private static void calibrateTopic() {
-        String calibratedName = getTopic().strip().toLowerCase();
-        if (calibratedName.contentEquals("1") || calibratedName.matches("math")) {
-            System.out.println("-------------------------------------------------------------------------------------");
-            setTopic(topics.get(0));
-        } else if (calibratedName.contentEquals("2") || calibratedName.matches("football")) {
-            System.out.println("-------------------------------------------------------------------------------------");
-            setTopic(topics.get(2));
-        } else if (calibratedName.contentEquals("3") || calibratedName.matches("programming")) {
-            System.out.println("-------------------------------------------------------------------------------------");
-            setTopic(topics.get(1));
-        } else {
-            System.out.println("error in calibrate topic");
-        }
-
-    }
-
-    private static void askQuestion() {
-        // якщо чесно , незнаю як саме позбутися змінної k тому , ще без
-        // неї всі відповіді підходять до всіх питань або ще всіляке
-        int note = 0 , k=0 , i = 0;
-        Map<String , String> result = new HashMap<>();
-        result = getTopic()==topics.getFirst() ? questionsAndAnswersMath :
-                getTopic()==topics.get(1) ? questionsAndAnswersProgramming :
-                        questionsAndAnswersFootball ;
-
-        Scanner scanner = new Scanner(System.in);
-        for (var question: result.keySet()
-             ) {
-            System.out.print(question + " ");
-            String userResponse = scanner.nextLine();
-            k++; i++;
-            if (userResponse.equals(result.get(question)) && k==i) {
-                note++;
+        while (true) {
+            String calibratedName = getTopic().strip().toLowerCase();
+            if (calibratedName.contentEquals("1") || calibratedName.matches("math")) {
+                System.out.println("-------------------------------------------------------------------------------------");
+                setTopic(topics.get(0));
+                break;
+            } else if (calibratedName.contentEquals("2") || calibratedName.matches("football")) {
+                System.out.println("-------------------------------------------------------------------------------------");
+                setTopic(topics.get(2));
+                break;
+            } else if (calibratedName.contentEquals("3") || calibratedName.matches("programming")) {
+                System.out.println("-------------------------------------------------------------------------------------");
+                setTopic(topics.get(1));
+                break;
+            } else {
+                System.out.println("вибрана тема не існує, будь ласка виберіть з доступних тем");
+                askTopic();
             }
         }
-        setNote(note);
-        System.out.println("Твій результат : " + note + " з 3 ." + " " + (note > 0 && note < 3 ? "Це теж позитивна оцінка !"
-                : note == 0 ? "Погано" : "Супер!"));
+        }
+
+        private static void askQuestion () {
+            // якщо чесно , незнаю як саме позбутися змінної k тому , ще без
+            // неї всі відповіді підходять до всіх питань або ще всіляке
+            int note = 0, k = 0, i = 0;
+            Map<String, String> result = new HashMap<>();
+            result = getTopic().equals(topics.getFirst()) ? questionsAndAnswersMath :
+                    getTopic().equals(topics.get(1)) ? questionsAndAnswersProgramming :
+                            questionsAndAnswersFootball;
+
+            Scanner scanner = new Scanner(System.in);
+            for (var question : result.keySet()
+            ) {
+                System.out.print(question + " ");
+                String userResponse = scanner.nextLine();
+                k++;
+                i++;
+                if (userResponse.equals(result.get(question)) && k == i) {
+                    note++;
+                }
+            }
+            setNote(note);
+            System.out.println("Твій результат : " + note + " з 3 ." + " " + (note > 0 && note < 3 ? "Це теж позитивна оцінка !"
+                    : note == 0 ? "Погано" : "Супер!"));
+        }
+
     }
 
-}
