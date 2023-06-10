@@ -69,8 +69,28 @@ class Quiziz {
         greet();
         askTopic();
         askQuestion();
-
+        doBetterResults();
     }
+
+    private static void doBetterResults(){
+        while (true){
+            Scanner scanner = new Scanner(System.in);
+            if (getNote()<3) {
+                System.out.println("Бажаєте покращити результати ?(y/n)");
+                String userResponse = scanner.nextLine().strip().toLowerCase();
+                if(!(userResponse.equals("y"))){
+                    System.out.println("Тоді до зустрічі !");
+                    break;
+                }else {
+                    greet();
+                    askTopic();
+                    askQuestion();
+                }
+            }
+        }
+    }
+
+
 
     private static void askUsername() {
         Scanner scanner = new Scanner(System.in);
