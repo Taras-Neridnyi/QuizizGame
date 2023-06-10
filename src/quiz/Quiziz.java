@@ -2,6 +2,8 @@ package quiz;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -16,11 +18,7 @@ class Quiziz {
     private static String username;
     private static String topic;
     private static byte note;
-    private static LinkedList<String> topics = new LinkedList<>() {{
-        add("Math");
-        add("Programming");
-        add("football");
-    }};
+    private static List<String> topics =  List.of("Math" , "Progamming" , "football");
 
     public static void returnIndex() {
         System.out.println("1 " + topics.get(0));
@@ -28,23 +26,20 @@ class Quiziz {
         System.out.println("3 " + topics.get(2));
     }
 
-    private static HashMap<String, String> questionsAndAnswersMath = new HashMap<>() {{
-        put("Скільки буде 2+2*32+4-2 ? ", "68");
-        put("Прямий кут дорівнює (градусів)", "90");
-        put("(2+6)-(3+4) * ((3+4)-(2+3)) =", "2");
-    }};
+    private static Map<String, String> questionsAndAnswersMath = 
+    		 Map.of("Скільки буде 2+2*32+4-2 ? " , "68" ,
+			"Прямий кут дорівнює (градусів)", "90" ,
+			"(2+6)-(3+4) * ((3+4)-(2+3)) =" , "2");
 
-    private static HashMap<String, String> questionsAndAnswersProgramming = new HashMap<>() {{
-        put("Хто створив java ?", "Джеймс Гослінг");
-        put("У котрому році ? ", "1995");
-        put("У java є oop ?", "так");
-    }};
+    private static Map<String, String> questionsAndAnswersProgramming = 
+    		 Map.of("Хто створив java ?", "Джеймс Гослінг" , 
+    				"У котрому році ? ", "1995", 
+    				"У java є oop ?", "так");
 
-    private static HashMap<String, String> questionsAndAnswersFootball = new HashMap<>() {{
-        put("Мессі і .......", "Роналду");
-        put("Зінченко у команді .......", "Арсенал");
-        put("Гравців у полі ..", "22");
-    }};
+    private static Map<String, String> questionsAndAnswersFootball = 
+    		Map.of("Мессі і .......", "Роналду" , 
+    				"Зінченко у команді .......", "Арсенал" , 
+    				"Гравців у полі ..", "22" );
 
     /*
         getters and setters
@@ -132,11 +127,11 @@ class Quiziz {
     }
 
     private static void askQuestion() {
-        if (getTopic().contentEquals(topics.getFirst())) {
+        if (getTopic().contentEquals(((LinkedList<String>) topics).getFirst())) {
             askMath();
         } else if (getTopic().contentEquals(topics.get(1))) {
             askProgramming();
-        } else if (getTopic().contentEquals(topics.getLast())) {
+        } else if (getTopic().contentEquals(((LinkedList<String>) topics).getLast())) {
             askFootball();
         }
     }
