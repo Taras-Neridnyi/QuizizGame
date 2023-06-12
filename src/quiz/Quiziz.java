@@ -22,6 +22,7 @@ class Quiziz {
     private static final String MATH_TOPIC = "Math";
     private static final String PROGRAMMING_TOPIC = "Programming";
     private static final String FOOTBALL_TOPIC = "Football";
+
     private static LinkedList<String> topics =
             new LinkedList<>(List.of(MATH_TOPIC, PROGRAMMING_TOPIC, FOOTBALL_TOPIC));
     private static Map<String, String> questionsAndAnswersMath = new HashMap<>(
@@ -38,6 +39,11 @@ class Quiziz {
             Map.of("Мессі і .......", "Роналду",
                     "Зінченко у команді .......", "Арсенал",
                     "Гравців у полі ..", "22"));
+
+    private static final Map<String, Map<String, String>> topicsToQuestions = new HashMap<>(
+            Map.of(MATH_TOPIC, questionsAndAnswersMath,
+                    PROGRAMMING_TOPIC, questionsAndAnswersProgramming,
+                    FOOTBALL_TOPIC, questionsAndAnswersFootball));
 
     /*
         getters and setters
@@ -136,10 +142,7 @@ class Quiziz {
 
         private static void askQuestion () {
             int note = 0;
-            Map<String, String> result = new HashMap<>();
-            result = getTopic().equals(topics.getFirst()) ? questionsAndAnswersMath :
-                    getTopic().equals(topics.get(1)) ? questionsAndAnswersProgramming :
-                            questionsAndAnswersFootball;
+            Map<String , String> result = topicsToQuestions.get(getTopic());
 
             Scanner scanner = new Scanner(System.in);
             for (var question : result.keySet()) {
