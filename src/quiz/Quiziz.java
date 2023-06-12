@@ -76,7 +76,6 @@ class Quiziz {
     /*
         other methods
      */
-
     protected static void run() {
         boolean status = true;
         Scanner scanner = new Scanner(System.in);
@@ -90,7 +89,7 @@ class Quiziz {
             }
             else if (getNote() < 3) {
                 System.out.println("""
-                        Бажаєте покращити результати ?(y
+                        Бажаєте покращити результати ?
                         Для пордовження виберіть одну з поданих літер (y/n)
                         y -> так/yes
                         n -> ні/no""");
