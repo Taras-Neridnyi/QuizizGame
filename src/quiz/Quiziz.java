@@ -73,9 +73,12 @@ class Quiziz {
     }
 
     private static void doBetterResults() {
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            Scanner scanner = new Scanner(System.in);
-            if (getNote() < 3) {
+            if (getNote() == 3){
+                break;
+            }
+            else if (getNote() < 3) {
                 System.out.println("Бажаєте покращити результати ?(y/n)");
                 String userResponse = scanner.nextLine().strip().toLowerCase();
                 if (!(userResponse.equals("y"))) {
