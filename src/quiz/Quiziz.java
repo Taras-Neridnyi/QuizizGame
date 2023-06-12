@@ -26,8 +26,8 @@ class Quiziz {
     private static LinkedList<String> topics =
             new LinkedList<>(List.of(MATH_TOPIC, PROGRAMMING_TOPIC, FOOTBALL_TOPIC));
     private static Map<String, String> questionsAndAnswersMath = new HashMap<>(
-            Map.of("Скільки буде 2+2*32+4-2 ? ", "68",
-                    "Прямий кут дорівнює (градусів)", "90",
+            Map.of("Скільки буде 2+2*32+4-2 =", "68",
+                    "Прямий кут дорівнює (градусів) =", "90",
                     "(2+6)-(3+4) * ((3+4)-(2+3)) =", "2"));
 
     private static Map<String, String> questionsAndAnswersProgramming = new HashMap<>(
@@ -89,7 +89,12 @@ class Quiziz {
                 status = false;
             }
             else if (getNote() < 3) {
-                System.out.println("Бажаєте покращити результати ?(y/n)");
+                System.out.println("""
+                        Бажаєте покращити результати ?(y
+                        Для пордовження виберіть одну з поданих літер (y/n)
+                        y -> так/yes
+                        n -> ні/no""");
+                System.out.print("Введіть : ");
                 String userResponse = scanner.nextLine().strip().toLowerCase();
                 if (!(userResponse.equals("y"))) {
                     System.out.println("Тоді до зустрічі !");
@@ -99,8 +104,9 @@ class Quiziz {
         }
     }
     private static void askUsername() {
+        line();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Перед тим як почати , напиши своє ім'я :  ");
+        System.out.print("Перед тим як почати , напишіть своє ім'я :  ");
         String name = scanner.nextLine();
         setName(name);
     }
@@ -112,24 +118,24 @@ class Quiziz {
     private static void askTopic() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
-               виберіть одну з трьох тем для квізу:
+               Виберіть одну з трьох тем для квізу:
                 1 - Math
                 2 - Football
                 3 - Programming
-                       Для вибору можеш писати цифру або одне з слів навпроти цифр
-                """);
+                       Для вибору можете написати цифру або одне з слів навпроти цифр""");
+        System.out.print("Введіть : ");
         String topic = scanner.nextLine();
         calibrateTopic(topic);
     }
     private static void calibrateTopic(String calibratedName) {
         if (calibratedName.contentEquals("1") || calibratedName.matches("[Mm]ath")) {
-            System.out.println("-------------------------------------------------------------------------------------");
+            line();
             setTopic(MATH_TOPIC);
         } else if (calibratedName.contentEquals("2") || calibratedName.matches("[Ff]ootball")) {
-            System.out.println("-------------------------------------------------------------------------------------");
+            line();
             setTopic(FOOTBALL_TOPIC);
         } else if (calibratedName.contentEquals("3") || calibratedName.matches("[Pp]rogramming")) {
-            System.out.println("-------------------------------------------------------------------------------------");
+            line();
             setTopic(PROGRAMMING_TOPIC);
         } else {
             System.out.print("Вибраної тема не існує . ");
@@ -150,8 +156,19 @@ class Quiziz {
                 }
             }
             setNote(note);
-            System.out.println("Твій результат : " + note + " з 3 ." + " " + (note > 0 && note < 3 ? "Це теж позитивна оцінка !"
-                    : note == 0 ? "Погано" : "Супер!"));
+            line();
+            System.out.println("Ваш результат : " + note + " з 3 ." + " " + (note == 0
+                    ? "Це справді поганий результат :( . Думаю вам потрібно Спробувати знову ."
+                    : note == 1 ? "Погано , постарайтесь краще :| . Не здавайтесь :=)" : note == 2
+                    ?" Непогано ,  ще трохи і ви усе знатимете ! " : "Неймовірно! Ваш результат вражає :)"));
+        }
+
+        private static void line(){
+        String line = "";
+            for (int i = 0; i < 100; i++) {
+                line += "-";
+            }
+            System.out.println(line);
         }
 
     }
