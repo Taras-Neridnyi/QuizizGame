@@ -69,34 +69,26 @@ class Quiziz {
      */
 
     protected static void run() {
+        boolean status = true;
+        Scanner scanner = new Scanner(System.in);
         askUsername();
         greet();
-        askTopic();
-        askQuestion();
-        doBetterResults();
-    }
-
-    private static void doBetterResults() {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
+        while (status) {
+            askTopic();
+            askQuestion();
             if (getNote() == 3){
-                break;
+                status = false;
             }
             else if (getNote() < 3) {
                 System.out.println("Бажаєте покращити результати ?(y/n)");
                 String userResponse = scanner.nextLine().strip().toLowerCase();
                 if (!(userResponse.equals("y"))) {
                     System.out.println("Тоді до зустрічі !");
-                    break;
-                } else {
-                    greet();
-                    askTopic();
-                    askQuestion();
+                    status = false;
                 }
             }
         }
     }
-
     private static void askUsername() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Перед тим як почати , напиши своє ім'я :  ");
@@ -120,12 +112,11 @@ class Quiziz {
                        Для вибору можеш писати цифру або одне з слів навпроти цифр
                 """);
         String topic = scanner.nextLine();
-        setTopic(topic);
-        calibrateTopic();
+        calibrateTopic(topic);
     }
 
-    private static void calibrateTopic() {
-            String calibratedName = getTopic().strip().toLowerCase();
+    private static void calibrateTopic(String topic) {
+            String calibratedName = topic.strip().toLowerCase();
             if (calibratedName.contentEquals("1") || calibratedName.matches("math")) {
                 System.out.println("-------------------------------------------------------------------------------------");
                 setTopic(topics.get(0));
@@ -142,8 +133,6 @@ class Quiziz {
         }
 
         private static void askQuestion () {
-            // якщо чесно , незнаю як саме позбутися змінної k тому , ще без
-            // неї всі відповіді підходять до всіх питань або ще всіляке
             int note = 0;
             Map<String, String> result = new HashMap<>();
             result = getTopic().equals(topics.getFirst()) ? questionsAndAnswersMath :
