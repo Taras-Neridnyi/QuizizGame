@@ -121,25 +121,20 @@ class Quiziz {
     }
 
     private static void calibrateTopic() {
-        while (true) {
             String calibratedName = getTopic().strip().toLowerCase();
             if (calibratedName.contentEquals("1") || calibratedName.matches("math")) {
                 System.out.println("-------------------------------------------------------------------------------------");
                 setTopic(topics.get(0));
-                break;
             } else if (calibratedName.contentEquals("2") || calibratedName.matches("football")) {
                 System.out.println("-------------------------------------------------------------------------------------");
                 setTopic(topics.get(2));
-                break;
             } else if (calibratedName.contentEquals("3") || calibratedName.matches("programming")) {
                 System.out.println("-------------------------------------------------------------------------------------");
                 setTopic(topics.get(1));
-                break;
             } else {
                 System.out.println("вибрана тема не існує, будь ласка виберіть з доступних тем");
                 askTopic();
             }
-        }
         }
 
         private static void askQuestion () {
