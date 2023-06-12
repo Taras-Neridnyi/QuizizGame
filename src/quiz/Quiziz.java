@@ -19,8 +19,11 @@ class Quiziz {
     private static String topic;
     private static int note;
 
-    private static LinkedList<String> topics = new LinkedList<>(List.of("Math", "Progamming", "football"));
-
+    private static final String MATH_TOPIC = "Math";
+    private static final String PROGRAMMING_TOPIC = "Programming";
+    private static final String FOOTBALL_TOPIC = "Football";
+    private static LinkedList<String> topics =
+            new LinkedList<>(List.of(MATH_TOPIC, PROGRAMMING_TOPIC, FOOTBALL_TOPIC));
     private static Map<String, String> questionsAndAnswersMath = new HashMap<>(
             Map.of("Скільки буде 2+2*32+4-2 ? ", "68",
                     "Прямий кут дорівнює (градусів)", "90",
@@ -115,22 +118,21 @@ class Quiziz {
         calibrateTopic(topic);
     }
 
-    private static void calibrateTopic(String topic) {
-            String calibratedName = topic.strip().toLowerCase();
-            if (calibratedName.contentEquals("1") || calibratedName.matches("math")) {
-                System.out.println("-------------------------------------------------------------------------------------");
-                setTopic(topics.get(0));
-            } else if (calibratedName.contentEquals("2") || calibratedName.matches("football")) {
-                System.out.println("-------------------------------------------------------------------------------------");
-                setTopic(topics.get(2));
-            } else if (calibratedName.contentEquals("3") || calibratedName.matches("programming")) {
-                System.out.println("-------------------------------------------------------------------------------------");
-                setTopic(topics.get(1));
-            } else {
-                System.out.println("вибрана тема не існує, будь ласка виберіть з доступних тем");
-                askTopic();
-            }
+    private static void calibrateTopic(String calibratedName) {
+        if (calibratedName.contentEquals("1") || calibratedName.matches("[Mm]ath")) {
+            System.out.println("-------------------------------------------------------------------------------------");
+            setTopic(MATH_TOPIC);
+        } else if (calibratedName.contentEquals("2") || calibratedName.matches("[Ff]ootball")) {
+            System.out.println("-------------------------------------------------------------------------------------");
+            setTopic(FOOTBALL_TOPIC);
+        } else if (calibratedName.contentEquals("3") || calibratedName.matches("[Pp]rogramming")) {
+            System.out.println("-------------------------------------------------------------------------------------");
+            setTopic(PROGRAMMING_TOPIC);
+        } else {
+            System.out.println("вибрана тема не існує, будь ласка виберіть з доступних тем");
+            askTopic();
         }
+    }
 
         private static void askQuestion () {
             int note = 0;
