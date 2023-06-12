@@ -114,7 +114,7 @@ class Quiziz {
     private static void askTopic() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
-                ok , тепер виберіть одну з трьох тем для квізу:
+               виберіть одну з трьох тем для квізу:
                 1 - Math
                 2 - Football
                 3 - Programming
@@ -135,7 +135,7 @@ class Quiziz {
             System.out.println("-------------------------------------------------------------------------------------");
             setTopic(PROGRAMMING_TOPIC);
         } else {
-            System.out.println("вибрана тема не існує, будь ласка виберіть з доступних тем");
+            System.out.print("Вибраної тема не існує . ");
             askTopic();
         }
     }
