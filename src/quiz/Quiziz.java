@@ -144,20 +144,17 @@ class Quiziz {
         private static void askQuestion () {
             // якщо чесно , незнаю як саме позбутися змінної k тому , ще без
             // неї всі відповіді підходять до всіх питань або ще всіляке
-            int note = 0, k = 0, i = 0;
+            int note = 0;
             Map<String, String> result = new HashMap<>();
             result = getTopic().equals(topics.getFirst()) ? questionsAndAnswersMath :
                     getTopic().equals(topics.get(1)) ? questionsAndAnswersProgramming :
                             questionsAndAnswersFootball;
 
             Scanner scanner = new Scanner(System.in);
-            for (var question : result.keySet()
-            ) {
+            for (var question : result.keySet()) {
                 System.out.print(question + " ");
                 String userResponse = scanner.nextLine();
-                k++;
-                i++;
-                if (userResponse.equals(result.get(question)) && k == i) {
+                if (userResponse.equals(result.get(question))) {
                     note++;
                 }
             }
