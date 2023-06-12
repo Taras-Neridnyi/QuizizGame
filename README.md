@@ -6,5 +6,5 @@
 ### - Hoost your brain to the max !
 ### - Explore your knowledge !
 ### - Get note and fix your result if you will !
-### - Don't give up ! try again !
+### - Don't give up , try again !
 ### - Choose topic you admire the most
