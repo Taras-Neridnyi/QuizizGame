@@ -104,13 +104,11 @@ class Quiziz {
         String name = scanner.nextLine();
         setName(name);
     }
-
     private static void greet() {
         System.out.println("Привіт " + getName() + """
                  Це Quizizoo гра !
                 """);
     }
-
     private static void askTopic() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
@@ -123,7 +121,6 @@ class Quiziz {
         String topic = scanner.nextLine();
         calibrateTopic(topic);
     }
-
     private static void calibrateTopic(String calibratedName) {
         if (calibratedName.contentEquals("1") || calibratedName.matches("[Mm]ath")) {
             System.out.println("-------------------------------------------------------------------------------------");
