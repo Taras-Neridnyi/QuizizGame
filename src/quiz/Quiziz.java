@@ -81,10 +81,9 @@ class Quiziz {
         while (status) {
             askTopic();
             askQuestion();
-            if (getNote() == 3){
+            if (getNote() == 3) {
                 status = false;
-            }
-            else if (getNote() < 3) {
+            } else if (getNote() < 3) {
                 System.out.println("""
                         Бажаєте покращити результати ?
                         Для пордовження виберіть одну з поданих літер (y/n)
@@ -99,6 +98,7 @@ class Quiziz {
             }
         }
     }
+
     private static void askUsername() {
         line();
         Scanner scanner = new Scanner(System.in);
@@ -106,23 +106,26 @@ class Quiziz {
         String name = scanner.nextLine();
         setName(name);
     }
+
     private static void greet() {
         System.out.println("Привіт " + getName() + """
                  Це Quizizoo гра !
                 """);
     }
+
     private static void askTopic() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
-               Виберіть одну з трьох тем для квізу:
-                1 - Math
-                2 - Football
-                3 - Programming
-                       Для вибору можете написати цифру або одне з слів навпроти цифр""");
+                Виберіть одну з трьох тем для квізу:
+                 1 - Math
+                 2 - Football
+                 3 - Programming
+                        Для вибору можете написати цифру або одне з слів навпроти цифр""");
         System.out.print("Введіть : ");
         String topic = scanner.nextLine();
         calibrateTopic(topic);
     }
+
     private static void calibrateTopic(String calibratedName) {
         if (calibratedName.contentEquals("1") || calibratedName.matches("[Mm]ath")) {
             line();
@@ -139,9 +142,9 @@ class Quiziz {
         }
     }
 
-    private static void askQuestion () {
+    private static void askQuestion() {
         int note = 0;
-        Map<String , String> result = topicsToQuestions.get(getTopic());
+        Map<String, String> result = topicsToQuestions.get(getTopic());
 
         Scanner scanner = new Scanner(System.in);
         for (var question : result.keySet()) {
@@ -151,20 +154,16 @@ class Quiziz {
                 note++;
             }
         }
-         setNote(note);
-         line();
-         System.out.println("Ваш результат : " + note + " з 3 ." + " " + (note == 0
+        setNote(note);
+        line();
+        System.out.println("Ваш результат : " + note + " з 3 ." + " " + (note == 0
                 ? "Це справді поганий результат :( . Думаю вам потрібно Спробувати знову ."
                 : note == 1 ? "Погано , постарайтесь краще :| . Не здавайтесь :=)" : note == 2
-                ?" Непогано ,  ще трохи і ви усе знатимете ! " : "Неймовірно! Ваш результат вражає :)"));
-        }
-    private static void line(){
-        String line = "";
-            for (int i = 0; i < 100; i++) {
-                line += "-";
-            }
-            System.out.println(line);
-        }
-
+                ? " Непогано ,  ще трохи і ви усе знатимете ! " : "Неймовірно! Ваш результат вражає :)"));
     }
+
+    private static void line() {
+        System.out.println("-".repeat(50));
+    }
+}
 
