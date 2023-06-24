@@ -22,9 +22,6 @@ class Quiziz {
     private static final String MATH_TOPIC = "Math";
     private static final String PROGRAMMING_TOPIC = "Programming";
     private static final String FOOTBALL_TOPIC = "Football";
-
-    private static LinkedList<String> topics =
-            new LinkedList<>(List.of(MATH_TOPIC, PROGRAMMING_TOPIC, FOOTBALL_TOPIC));
     private static Map<String, String> questionsAndAnswersMath = new HashMap<>(
             Map.of("Скільки буде 2+2*32+4-2 =", "68",
                     "Прямий кут дорівнює (градусів) =", "90",
@@ -142,27 +139,26 @@ class Quiziz {
         }
     }
 
-        private static void askQuestion () {
-            int note = 0;
-            Map<String , String> result = topicsToQuestions.get(getTopic());
+    private static void askQuestion () {
+        int note = 0;
+        Map<String , String> result = topicsToQuestions.get(getTopic());
 
-            Scanner scanner = new Scanner(System.in);
-            for (var question : result.keySet()) {
-                System.out.print(question + " ");
-                String userResponse = scanner.nextLine();
-                if (userResponse.equals(result.get(question))) {
-                    note++;
-                }
+        Scanner scanner = new Scanner(System.in);
+        for (var question : result.keySet()) {
+            System.out.print(question + " ");
+            String userResponse = scanner.nextLine();
+            if (userResponse.equals(result.get(question))) {
+                note++;
             }
-            setNote(note);
-            line();
-            System.out.println("Ваш результат : " + note + " з 3 ." + " " + (note == 0
-                    ? "Це справді поганий результат :( . Думаю вам потрібно Спробувати знову ."
-                    : note == 1 ? "Погано , постарайтесь краще :| . Не здавайтесь :=)" : note == 2
-                    ?" Непогано ,  ще трохи і ви усе знатимете ! " : "Неймовірно! Ваш результат вражає :)"));
         }
-
-        private static void line(){
+         setNote(note);
+         line();
+         System.out.println("Ваш результат : " + note + " з 3 ." + " " + (note == 0
+                ? "Це справді поганий результат :( . Думаю вам потрібно Спробувати знову ."
+                : note == 1 ? "Погано , постарайтесь краще :| . Не здавайтесь :=)" : note == 2
+                ?" Непогано ,  ще трохи і ви усе знатимете ! " : "Неймовірно! Ваш результат вражає :)"));
+        }
+    private static void line(){
         String line = "";
             for (int i = 0; i < 100; i++) {
                 line += "-";
