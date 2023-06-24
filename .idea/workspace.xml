@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a08376d9-b292-4a63-89ce-74c15249ae5b" name="Changes" comment="add HashMap's for football and programming Q&amp;A">
+    <list default="true" id="a08376d9-b292-4a63-89ce-74c15249ae5b" name="Changes" comment="deleted unused imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/quiz/Quiziz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/Quiziz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/quiz/QuzizLaunch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/QuzizLaunch.java" afterDir="false" />
@@ -73,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.QuzizLaunch" />
         <item itemvalue="Application.QuzizLaunch" />
       </list>
     </recent_temporary>
@@ -184,14 +185,136 @@
       <option name="project" value="LOCAL" />
       <updated>1683054041499</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Change Maps and Lists">
+      <created>1686415800249</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686415800249</updated>
+    </task>
+    <task id="LOCAL-00016" summary="combined three questions methods into one method">
+      <created>1686421607080</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686421607080</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added doBetterResults method">
+      <created>1686422611338</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686422611338</updated>
+    </task>
+    <task id="LOCAL-00018" summary="changed calibrateTopic method">
+      <created>1686424313617</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1686424313617</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixed bug with 3 note">
+      <created>1686576295912</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686576295912</updated>
+    </task>
+    <task id="LOCAL-00020" summary="deleted while-loop from calibrateTopic method">
+      <created>1686576390156</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686576390156</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixed imports">
+      <created>1686576533020</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1686576533020</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixed small bugs , updated run method , deleted doBetterResults method">
+      <created>1686580393024</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1686580393024</updated>
+    </task>
+    <task id="LOCAL-00023" summary="update calibrateTopic method">
+      <created>1686580890230</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686580890230</updated>
+    </task>
+    <task id="LOCAL-00024" summary="updated askQuestion method , added new map ...">
+      <created>1686581237474</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1686581237474</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update text">
+      <created>1686581888357</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1686581888357</updated>
+    </task>
+    <task id="LOCAL-00026" summary="updated text">
+      <created>1686582021936</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1686582021936</updated>
+    </task>
+    <task id="LOCAL-00027" summary="updated text">
+      <created>1686583707367</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1686583707367</updated>
+    </task>
+    <task id="LOCAL-00028" summary="updated text">
+      <created>1686583994256</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1686583994256</updated>
+    </task>
+    <task id="LOCAL-00029" summary="small bugs fixed">
+      <created>1687605742792</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1687605742792</updated>
+    </task>
+    <task id="LOCAL-00030" summary="small bugs fixed">
+      <created>1687606082378</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1687606082378</updated>
+    </task>
+    <task id="LOCAL-00031" summary="updated line method">
+      <created>1687606314846</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1687606314846</updated>
+    </task>
+    <task id="LOCAL-00032" summary="deleted unused imports">
+      <created>1687606426989</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1687606426989</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added 2 classes Quiziz , QuizizLaunch," />
-    <MESSAGE value="added photo" />
-    <MESSAGE value="Added getters &amp; setters for name,topic fields,2 constructors" />
-    <MESSAGE value="add str askUserName method" />
     <MESSAGE value="add void greet method" />
     <MESSAGE value="add void chooseTopic method template" />
     <MESSAGE value="add void run method" />
@@ -202,6 +325,21 @@
     <MESSAGE value="fix some bugs" />
     <MESSAGE value="add HashMap for Math Q&amp;A" />
     <MESSAGE value="add HashMap's for football and programming Q&amp;A" />
-    <option name="LAST_COMMIT_MESSAGE" value="add HashMap's for football and programming Q&amp;A" />
+    <MESSAGE value="Change Maps and Lists" />
+    <MESSAGE value="combined three questions methods into one method" />
+    <MESSAGE value="added doBetterResults method" />
+    <MESSAGE value="changed calibrateTopic method" />
+    <MESSAGE value="fixed bug with 3 note" />
+    <MESSAGE value="deleted while-loop from calibrateTopic method" />
+    <MESSAGE value="fixed imports" />
+    <MESSAGE value="fixed small bugs , updated run method , deleted doBetterResults method" />
+    <MESSAGE value="update calibrateTopic method" />
+    <MESSAGE value="updated askQuestion method , added new map ..." />
+    <MESSAGE value="update text" />
+    <MESSAGE value="updated text" />
+    <MESSAGE value="small bugs fixed" />
+    <MESSAGE value="updated line method" />
+    <MESSAGE value="deleted unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted unused imports" />
   </component>
 </project>
