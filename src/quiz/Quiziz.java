@@ -13,29 +13,29 @@ class Quiziz {
     /*
         Fields
      */
-    private static String username;
-    private static String topic;
-    private static int note;
+    private String username;
+    private String topic;
+    private int note;
 
-    private static final String MATH_TOPIC = "Math";
-    private static final String PROGRAMMING_TOPIC = "Programming";
-    private static final String FOOTBALL_TOPIC = "Football";
-    private static Map<String, String> questionsAndAnswersMath = new HashMap<>(
+    private final String MATH_TOPIC = "Math";
+    private final String PROGRAMMING_TOPIC = "Programming";
+    private final String FOOTBALL_TOPIC = "Football";
+    private final Map<String, String> questionsAndAnswersMath = new HashMap<>(
             Map.of("Скільки буде 2+2*32+4-2 =", "68",
                     "Прямий кут дорівнює (градусів) =", "90",
                     "(2+6)-(3+4) * ((3+4)-(2+3)) =", "2"));
 
-    private static Map<String, String> questionsAndAnswersProgramming = new HashMap<>(
+    private final Map<String, String> questionsAndAnswersProgramming = new HashMap<>(
             Map.of("Хто створив java ?", "Джеймс Гослінг",
                     "У котрому році ? ", "1995",
                     "У java є oop ?", "так"));
 
-    private static Map<String, String> questionsAndAnswersFootball = new HashMap<>(
+    private final Map<String, String> questionsAndAnswersFootball = new HashMap<>(
             Map.of("Мессі і .......", "Роналду",
                     "Зінченко у команді .......", "Арсенал",
                     "Гравців у полі ..", "22"));
 
-    private static final Map<String, Map<String, String>> topicsToQuestions = new HashMap<>(
+    private final Map<String, Map<String, String>> topicsToQuestions = new HashMap<>(
             Map.of(MATH_TOPIC, questionsAndAnswersMath,
                     PROGRAMMING_TOPIC, questionsAndAnswersProgramming,
                     FOOTBALL_TOPIC, questionsAndAnswersFootball));
@@ -44,34 +44,34 @@ class Quiziz {
         getters and setters
      */
 
-    public static int getNote() {
+    public int getNote() {
         return note;
     }
 
-    public static void setNote(int note) {
-        Quiziz.note = note;
+    public void setNote(int note) {
+        this.note = note;
     }
 
-    public static String getTopic() {
+    public String getTopic() {
         return topic;
     }
 
-    public static void setTopic(String topic) {
-        Quiziz.topic = topic;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
-    public static String getName() {
+    public String getName() {
         return username;
     }
 
-    public static void setName(String name) {
-        Quiziz.username = name;
+    public void setName(String name) {
+        this.username = name;
     }
 
     /*
         other methods
      */
-    protected static void run() {
+    protected void run() {
         boolean status = true;
         Scanner scanner = new Scanner(System.in);
         askUsername();
@@ -97,7 +97,7 @@ class Quiziz {
         }
     }
 
-    private static void askUsername() {
+    private void askUsername() {
         line();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Перед тим як почати , напишіть своє ім'я :  ");
@@ -105,13 +105,13 @@ class Quiziz {
         setName(name);
     }
 
-    private static void greet() {
+    private void greet() {
         System.out.println("Привіт " + getName() + """
-                 Це Quizizoo гра !
+                 Це Quiz zoo гра !
                 """);
     }
 
-    private static void askTopic() {
+    private void askTopic() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
                 Виберіть одну з трьох тем для квізу:
@@ -124,7 +124,7 @@ class Quiziz {
         calibrateTopic(topic);
     }
 
-    private static void calibrateTopic(String calibratedName) {
+    private void calibrateTopic(String calibratedName) {
         if (calibratedName.contentEquals("1") || calibratedName.matches("[Mm]ath")) {
             line();
             setTopic(MATH_TOPIC);
@@ -140,7 +140,7 @@ class Quiziz {
         }
     }
 
-    private static void askQuestion() {
+    private void askQuestion() {
         int note = 0;
         Map<String, String> result = topicsToQuestions.get(getTopic());
 
@@ -160,7 +160,7 @@ class Quiziz {
                 ? " Непогано ,  ще трохи і ви усе знатимете ! " : "Неймовірно! Ваш результат вражає :)"));
     }
 
-    private static void line() {
+    private void line() {
         System.out.println("-".repeat(50));
     }
 }
