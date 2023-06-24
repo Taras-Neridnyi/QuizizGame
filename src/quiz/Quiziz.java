@@ -1,9 +1,7 @@
 package quiz;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.List;
 import java.util.Map;
 
 /**
