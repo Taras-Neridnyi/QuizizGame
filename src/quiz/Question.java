@@ -2,7 +2,7 @@ package quiz;
 
 public class Question {
 
-    public Question(String answer, String question) {
+    public Question(String question , String answer) {
         this.answer = answer;
         this.question = question;
     }
