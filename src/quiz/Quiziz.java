@@ -15,7 +15,7 @@ class Quiziz {
      */
     private String username;
     private String topic;
-    private int note;
+    private int score;
     private final String MATH_TOPIC = "Math";
     private final String PROGRAMMING_TOPIC = "Programming";
     private final String FOOTBALL_TOPIC = "Football";
@@ -43,12 +43,12 @@ class Quiziz {
         getters and setters
      */
 
-    public int getNote() {
-        return note;
+    public int getScore() {
+        return score;
     }
 
-    public void setNote(int note) {
-        this.note = note;
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public String getTopic() {
@@ -78,9 +78,9 @@ class Quiziz {
         while (status) {
             askTopic();
             askQuestion();
-            if (getNote() == 3) {
+            if (getScore() == 3) {
                 status = false;
-            } else if (getNote() < 3) {
+            } else if (getScore() < 3) {
                 System.out.println("""
                         Бажаєте покращити результати ?
                         Для пордовження виберіть одну з поданих літер (y/n)
@@ -151,7 +151,7 @@ class Quiziz {
                 note++;
             }
         }
-        setNote(note);
+        setScore(note);
         line();
         System.out.println("Ваш результат : " + note + " з 3 ." + " " + (note == 0
                 ? "Це справді поганий результат :( . Думаю вам потрібно Спробувати знову ."
