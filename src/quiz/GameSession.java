@@ -1,9 +1,19 @@
 package quiz;
 
 public class GameSession {
+
+    public GameSession(int score, String playerName, Topic selectedTopic) {
+        this.score = score;
+        this.playerName = playerName;
+        this.selectedTopic = selectedTopic;
+    }
+
+    public GameSession() {
+    }
+
     private int score;
     private String playerName;
-    private String selectedTopic;
+    private Topic selectedTopic;
 
     public int getScore() {
         return score;
@@ -21,11 +31,11 @@ public class GameSession {
         this.playerName = playerName;
     }
 
-    public String getSelectedTopic() {
+    public Topic getSelectedTopic() {
         return selectedTopic;
     }
 
-    public void setSelectedTopic(String selectedTopic) {
+    public void setSelectedTopic(Topic selectedTopic) {
         this.selectedTopic = selectedTopic;
     }
 }
