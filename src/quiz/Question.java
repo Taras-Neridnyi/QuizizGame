@@ -2,6 +2,13 @@ package quiz;
 
 public class Question {
 
+    public Question(String answer, String question) {
+        this.answer = answer;
+        this.question = question;
+    }
+    public Question() {
+    }
+
     private String answer;
     private String question;
 
