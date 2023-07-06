@@ -14,11 +14,8 @@ class Quiziz {
         Fields
      */
     private String username;
-    private String topic;
+    private Topic topic;
     private int score;
-    private final String MATH_TOPIC = "Math";
-    private final String PROGRAMMING_TOPIC = "Programming";
-    private final String FOOTBALL_TOPIC = "Football";
 
     Topic mathTopic =new Topic("Math");
     Topic footballTopic = new Topic("Football");
@@ -38,10 +35,10 @@ class Quiziz {
                     "Зінченко у команді .......", "Арсенал",
                     "Гравців у полі ..", "22"));
 
-    private final Map<String, Map<String, String>> topicsToQuestions = new HashMap<>(
-            Map.of(MATH_TOPIC, questionsAndAnswersMath,
-                    PROGRAMMING_TOPIC, questionsAndAnswersProgramming,
-                    FOOTBALL_TOPIC, questionsAndAnswersFootball));
+    private final Map<Topic, Map<String, String>> topicsToQuestions = new HashMap<>(
+            Map.of(mathTopic, questionsAndAnswersMath,
+                    footballTopic, questionsAndAnswersProgramming,
+                    programmingTopic, questionsAndAnswersFootball));
 
     /*
         getters and setters
@@ -55,11 +52,11 @@ class Quiziz {
         this.score = score;
     }
 
-    public String getTopic() {
+    public Topic getTopic() {
         return topic;
     }
 
-    public void setTopic(String topic) {
+    public void setTopic(Topic topic) {
         this.topic = topic;
     }
 
@@ -130,13 +127,13 @@ class Quiziz {
     private void calibrateTopic(String calibratedName) {
         if (calibratedName.contentEquals("1") || calibratedName.matches("[Mm]ath")) {
             line();
-            setTopic(MATH_TOPIC);
+            setTopic(mathTopic);
         } else if (calibratedName.contentEquals("2") || calibratedName.matches("[Ff]ootball")) {
             line();
-            setTopic(FOOTBALL_TOPIC);
+            setTopic(footballTopic);
         } else if (calibratedName.contentEquals("3") || calibratedName.matches("[Pp]rogramming")) {
             line();
-            setTopic(PROGRAMMING_TOPIC);
+            setTopic(programmingTopic);
         } else {
             System.out.print("Вибраної тема не існує . ");
             askTopic();
