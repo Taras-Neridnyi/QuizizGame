@@ -19,6 +19,10 @@ class Quiziz {
     private final String MATH_TOPIC = "Math";
     private final String PROGRAMMING_TOPIC = "Programming";
     private final String FOOTBALL_TOPIC = "Football";
+
+    Topic mathTopic =new Topic("Math");
+    Topic footballTopic = new Topic("Football");
+    Topic programmingTopic = new Topic("Programming");
     private final Map<String, String> questionsAndAnswersMath = new HashMap<>(
             Map.of("Скільки буде 2+2*32+4-2 =", "68",
                     "Прямий кут дорівнює (градусів) =", "90",
