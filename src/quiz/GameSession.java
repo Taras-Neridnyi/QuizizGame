@@ -1,5 +1,7 @@
 package quiz;
 
+import java.util.Scanner;
+
 public class GameSession {
 
     public GameSession(int score, String playerName, Topic selectedTopic) {
@@ -37,5 +39,24 @@ public class GameSession {
 
     public void setSelectedTopic(Topic selectedTopic) {
         this.selectedTopic = selectedTopic;
+    }
+
+
+    private void greet() {
+        System.out.println("Привіт " + getPlayerName() + """
+                 Це Quiz zoo гра !
+                """);
+    }
+
+    private void askTopic() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("""
+                Виберіть одну з трьох тем для квізу:
+                 1 - Math
+                 2 - Football
+                 3 - Programming
+                        Для вибору можете написати цифру або одне з слів навпроти цифр""");
+        System.out.print("Введіть : ");
+        String topic = scanner.nextLine();
     }
 }
