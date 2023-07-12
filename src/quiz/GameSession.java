@@ -42,13 +42,13 @@ public class GameSession {
     }
 
 
-    private void greet() {
+    protected void greet() {
         System.out.println("Привіт " + getPlayerName() + """
                  Це Quiz zoo гра !
                 """);
     }
 
-    private void askTopic() {
+    protected void askTopic() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
                 Виберіть одну з трьох тем для квізу:
