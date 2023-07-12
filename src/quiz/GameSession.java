@@ -48,15 +48,4 @@ public class GameSession {
                 """);
     }
 
-    protected void askTopic() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("""
-                Виберіть одну з трьох тем для квізу:
-                 1 - Math
-                 2 - Football
-                 3 - Programming
-                        Для вибору можете написати цифру або одне з слів навпроти цифр""");
-        System.out.print("Введіть : ");
-        String topic = scanner.nextLine();
-    }
 }
