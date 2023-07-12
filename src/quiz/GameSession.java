@@ -43,9 +43,21 @@ public class GameSession {
 
 
     protected void greet() {
-        System.out.println("Привіт " + getPlayerName() + """
+        System.out.println("\nПривіт " + getPlayerName() + """
                  Це Quiz zoo гра !
                 """);
     }
+    protected String askUsername() {
+        line();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Перед тим як почати , напишіть своє ім'я :  ");
+        String name = scanner.nextLine();
+        setPlayerName(name);
+        return name;
+    }
+        protected void line() {
+            System.out.println("-".repeat(50));
 
+
+    }
 }
