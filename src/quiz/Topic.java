@@ -7,6 +7,9 @@ public class Topic {
     Topic(String title , Question question){
         setTitle(title);
     }
+    Topic(String title){
+        setTitle(title);
+    }
 
     private String title ;
 
