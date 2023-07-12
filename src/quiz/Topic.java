@@ -4,7 +4,7 @@ public class Topic {
 
     Topic (){
     }
-    Topic(String title){
+    Topic(String title , Question question){
         setTitle(title);
     }
 
