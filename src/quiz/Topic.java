@@ -2,11 +2,16 @@ package quiz;
 
 public class Topic {
 
-    private String title ;
+    Topic (){
+    }
+    Topic(String title , Question question){
+        setTitle(title);
+    }
+    Topic(String title){
+        setTitle(title);
+    }
 
-    private final String MATH_TOPIC = "Math";
-    private final String PROGRAMMING_TOPIC = "Programming";
-    private final String FOOTBALL_TOPIC = "Football";
+    private String title ;
 
     public String getTitle() {
         return title;
@@ -14,5 +19,12 @@ public class Topic {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "title='" + title + '\'' +
+                '}';
     }
 }
