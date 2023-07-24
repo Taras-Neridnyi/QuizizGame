@@ -1,6 +1,11 @@
 package quiz;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Topic {
+
+    List<Question> questionList = new LinkedList<>();
 
     Topic (){
     }
