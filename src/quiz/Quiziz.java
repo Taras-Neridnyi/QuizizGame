@@ -1,8 +1,8 @@
 package quiz;
 
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * @author Taras
@@ -17,9 +17,9 @@ class Quiziz {
     private Topic topic;
     private int score;
 
-    Topic mathTopic =new Topic("Math");
-    Topic footballTopic = new Topic("Football");
-    Topic programmingTopic = new Topic("Programming");
+    final Topic mathTopic =new Topic("Math");
+    final Topic footballTopic = new Topic("Football");
+    final Topic programmingTopic = new Topic("Programming");
     private final Map<String, String> questionsAndAnswersMath = new HashMap<>(
             Map.of("Скільки буде 2+2*32+4-2 =", "68",
                     "Прямий кут дорівнює (градусів) =", "90",
