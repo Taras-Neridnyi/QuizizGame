@@ -16,6 +16,10 @@ public class Topic {
         setTitle(title);
     }
 
+    Topic(String title , List<Question> questionList){
+        this.questionList = questionList;
+    }
+
     private String title ;
 
     public String getTitle() {

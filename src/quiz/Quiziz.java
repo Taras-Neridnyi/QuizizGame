@@ -1,8 +1,6 @@
 package quiz;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author Taras
@@ -17,13 +15,46 @@ class Quiziz {
     private Topic topic;
     private int score;
 
-    final Topic mathTopic =new Topic("Math");
-    final Topic footballTopic = new Topic("Football");
-    final Topic programmingTopic = new Topic("Programming");
+    Question math1 = new Question("Скільки буде 2+2*32+4-2 =" , "68");
+    Question math2 = new Question("Прямий кут дорівнює (градусів) =" , "90");
+    Question math3 = new Question("(2+6)-(3+4) * ((3+4)-(2+3)) =" , "2");
+
+    Question programming1 = new Question("Хто створив java ?" , "Джеймс Гослінг");
+    Question programming2 = new Question("У котрому році ? " , "1995");
+    Question programing3 = new Question("У java є oop ?" , "так");
+
+    Question football1 = new Question("Мессі і ......." , "Роналду");
+    Question football2 = new Question("Зінченко у команді ......." , "Арсенал");
+    Question football3 = new Question("Гравців у полі .." , "22");
+
+
+    List<Question> questionListMath = new LinkedList<>(List.of(
+            math1 , math2 , math3
+    ));
+
+    List<Question> questionListProgramming = new LinkedList<>(List.of(
+            programming1 , programming2 , programing3
+    ));
+
+    List<Question> questionListFootball = new LinkedList<>(List.of(
+            football1 , football2 , football3
+    ));
+
+    final Topic MATH_TOPIC =new Topic("Math" , questionListMath);
+    final Topic FOOTBALL_TOPIC = new Topic("Football" , questionListProgramming);
+    final Topic PROGRAMMING_TOPIC = new Topic("Programming" , questionListFootball);
+
+    List<Topic> topics = new LinkedList<>(List.of(
+            MATH_TOPIC , PROGRAMMING_TOPIC , FOOTBALL_TOPIC
+    ));
+
+
     private final Map<String, String> questionsAndAnswersMath = new HashMap<>(
             Map.of("Скільки буде 2+2*32+4-2 =", "68",
                     "Прямий кут дорівнює (градусів) =", "90",
                     "(2+6)-(3+4) * ((3+4)-(2+3)) =", "2"));
+
+
 
     private final Map<String, String> questionsAndAnswersProgramming = new HashMap<>(
             Map.of("Хто створив java ?", "Джеймс Гослінг",
@@ -36,9 +67,9 @@ class Quiziz {
                     "Гравців у полі ..", "22"));
 
     private final Map<Topic, Map<String, String>> topicsToQuestions = new HashMap<>(
-            Map.of(mathTopic, questionsAndAnswersMath,
-                    footballTopic, questionsAndAnswersProgramming,
-                    programmingTopic, questionsAndAnswersFootball));
+            Map.of(MATH_TOPIC, questionsAndAnswersMath,
+                    FOOTBALL_TOPIC, questionsAndAnswersProgramming,
+                    PROGRAMMING_TOPIC, questionsAndAnswersFootball));
 
     /*
         getters and setters
@@ -72,11 +103,12 @@ class Quiziz {
         other methods
      */
     protected void run() {
+        String userResponse = "";
         boolean status = true;
         Scanner scanner = new Scanner(System.in);
         askUsername();
         greet();
-        while (status) {
+        while (status && !userResponse.equals("n")) {
             askTopic();
             askQuestion();
             if (getScore() == 3) {
@@ -88,13 +120,10 @@ class Quiziz {
                         y -> так/yes
                         n -> ні/no""");
                 System.out.print("Введіть : ");
-                String userResponse = scanner.nextLine().strip().toLowerCase();
-                if (!(userResponse.equals("y"))) {
-                    System.out.println("Тоді до зустрічі !");
-                    status = false;
-                }
+                  userResponse += scanner.nextLine().strip().toLowerCase();
             }
         }
+        System.out.println("Toді до зустрічі");
     }
 
     private void askUsername() {
@@ -110,6 +139,7 @@ class Quiziz {
                  Це Quiz zoo гра !
                 """);
     }
+
 
     private void askTopic() {
         Scanner scanner = new Scanner(System.in);
@@ -127,13 +157,13 @@ class Quiziz {
     private void calibrateTopic(String calibratedName) {
         if (calibratedName.contentEquals("1") || calibratedName.matches("[Mm]ath")) {
             line();
-            setTopic(mathTopic);
+            setTopic(MATH_TOPIC);
         } else if (calibratedName.contentEquals("2") || calibratedName.matches("[Ff]ootball")) {
             line();
-            setTopic(footballTopic);
+            setTopic(FOOTBALL_TOPIC);
         } else if (calibratedName.contentEquals("3") || calibratedName.matches("[Pp]rogramming")) {
             line();
-            setTopic(programmingTopic);
+            setTopic(PROGRAMMING_TOPIC);
         } else {
             System.out.print("Вибраної тема не існує . ");
             askTopic();
