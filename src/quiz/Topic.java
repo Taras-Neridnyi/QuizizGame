@@ -9,13 +9,13 @@ public class Topic {
 
     Topic (){
     }
+
     Topic(String title , Question question){
         setTitle(title);
     }
     Topic(String title){
         setTitle(title);
     }
-
     Topic(String title , List<Question> questionList){
         this.questionList = questionList;
     }
@@ -28,6 +28,14 @@ public class Topic {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public List<Question> getQuestions() {
+        return questionList;
+    }
+
+    public void setQuestions(List<Question> questionList) {
+        this.questionList = questionList;
     }
 
     @Override

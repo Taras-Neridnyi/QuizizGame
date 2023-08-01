@@ -1,6 +1,8 @@
 package quiz;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author Taras
@@ -15,63 +17,41 @@ class Quiziz {
     private Topic topic;
     private int score;
 
-    Question math1 = new Question("Скільки буде 2+2*32+4-2 =" , "68");
-    Question math2 = new Question("Прямий кут дорівнює (градусів) =" , "90");
-    Question math3 = new Question("(2+6)-(3+4) * ((3+4)-(2+3)) =" , "2");
+    Question math1 = new Question("Скільки буде 2+2*32+4-2 =", "68");
+    Question math2 = new Question("Прямий кут дорівнює (градусів) =", "90");
+    Question math3 = new Question("(2+6)-(3+4) * ((3+4)-(2+3)) =", "2");
 
-    Question programming1 = new Question("Хто створив java ?" , "Джеймс Гослінг");
-    Question programming2 = new Question("У котрому році ? " , "1995");
-    Question programing3 = new Question("У java є oop ?" , "так");
+    Question programming1 = new Question("Хто створив java ?", "Джеймс Гослінг");
+    Question programming2 = new Question("У котрому році ? ", "1995");
+    Question programing3 = new Question("У java є oop ?", "так");
 
-    Question football1 = new Question("Мессі і ......." , "Роналду");
-    Question football2 = new Question("Зінченко у команді ......." , "Арсенал");
-    Question football3 = new Question("Гравців у полі .." , "22");
+    Question football1 = new Question("Мессі і .......", "Роналду");
+    Question football2 = new Question("Зінченко у команді .......", "Арсенал");
+    Question football3 = new Question("Гравців у полі ..", "22");
 
 
     List<Question> questionListMath = new LinkedList<>(List.of(
-            math1 , math2 , math3
+            math1, math2, math3
     ));
 
     List<Question> questionListProgramming = new LinkedList<>(List.of(
-            programming1 , programming2 , programing3
+            programming1, programming2, programing3
     ));
 
     List<Question> questionListFootball = new LinkedList<>(List.of(
-            football1 , football2 , football3
+            football1, football2, football3
     ));
 
-    final Topic MATH_TOPIC =new Topic("Math" , questionListMath);
-    final Topic FOOTBALL_TOPIC = new Topic("Football" , questionListProgramming);
-    final Topic PROGRAMMING_TOPIC = new Topic("Programming" , questionListFootball);
+    final Topic MATH_TOPIC = new Topic("Math", questionListMath);
+    final Topic FOOTBALL_TOPIC = new Topic("Football", questionListFootball);
+    final Topic PROGRAMMING_TOPIC = new Topic("Programming", questionListProgramming);
 
     List<Topic> topics = new LinkedList<>(List.of(
-            MATH_TOPIC , PROGRAMMING_TOPIC , FOOTBALL_TOPIC
+            MATH_TOPIC, PROGRAMMING_TOPIC, FOOTBALL_TOPIC
     ));
 
 
-    private final Map<String, String> questionsAndAnswersMath = new HashMap<>(
-            Map.of("Скільки буде 2+2*32+4-2 =", "68",
-                    "Прямий кут дорівнює (градусів) =", "90",
-                    "(2+6)-(3+4) * ((3+4)-(2+3)) =", "2"));
-
-
-
-    private final Map<String, String> questionsAndAnswersProgramming = new HashMap<>(
-            Map.of("Хто створив java ?", "Джеймс Гослінг",
-                    "У котрому році ? ", "1995",
-                    "У java є oop ?", "так"));
-
-    private final Map<String, String> questionsAndAnswersFootball = new HashMap<>(
-            Map.of("Мессі і .......", "Роналду",
-                    "Зінченко у команді .......", "Арсенал",
-                    "Гравців у полі ..", "22"));
-
-    private final Map<Topic, Map<String, String>> topicsToQuestions = new HashMap<>(
-            Map.of(MATH_TOPIC, questionsAndAnswersMath,
-                    FOOTBALL_TOPIC, questionsAndAnswersProgramming,
-                    PROGRAMMING_TOPIC, questionsAndAnswersFootball));
-
-    /*
+/*
         getters and setters
      */
 
@@ -108,19 +88,20 @@ class Quiziz {
         Scanner scanner = new Scanner(System.in);
         askUsername();
         greet();
-        while (status && !userResponse.equals("n")) {
+        while (status & !(userResponse.equals("n"))) {
             askTopic();
             askQuestion();
-            if (getScore() == 3) {
-                status = false;
-            } else if (getScore() < 3) {
+            if (!(getScore() == 3)) {
                 System.out.println("""
                         Бажаєте покращити результати ?
                         Для пордовження виберіть одну з поданих літер (y/n)
                         y -> так/yes
                         n -> ні/no""");
                 System.out.print("Введіть : ");
-                  userResponse += scanner.nextLine().strip().toLowerCase();
+               String s = scanner.nextLine();
+               status = !s.equals("n");
+            }else{
+                status = false;
             }
         }
         System.out.println("Toді до зустрічі");
@@ -165,22 +146,20 @@ class Quiziz {
             line();
             setTopic(PROGRAMMING_TOPIC);
         } else {
-            System.out.print("Вибраної тема не існує . ");
-            askTopic();
+           askTopic();
         }
     }
 
     private void askQuestion() {
         int note = 0;
-        Map<String, String> result = topicsToQuestions.get(getTopic());
+        List<Question> results = getTopic().getQuestions();
 
         Scanner scanner = new Scanner(System.in);
-        for (var question : result.keySet()) {
-            System.out.print(question + " ");
+        for (var question :
+                results) {
+            System.out.println(question.getQuestion() + " ");
             String userResponse = scanner.nextLine();
-            if (userResponse.equals(result.get(question))) {
-                note++;
-            }
+            note += userResponse.equals(question.getAnswer()) ? 1 : 0;
         }
         setScore(note);
         line();
@@ -193,9 +172,6 @@ class Quiziz {
     private void line() {
         System.out.println("-".repeat(50));
     }
-
-
-
 
 
 }
