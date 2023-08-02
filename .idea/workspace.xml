@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a08376d9-b292-4a63-89ce-74c15249ae5b" name="Changes" comment="made constants">
+    <list default="true" id="a08376d9-b292-4a63-89ce-74c15249ae5b" name="Changes" comment="made normaly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/quiz/Quiziz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/Quiziz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/quiz/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/Topic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,7 +429,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690216074869</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="added gets and sets in Topic .Deleted maps , fixed run method , changed askQuestion method with List">
+      <option name="closed" value="true" />
+      <created>1690908806730</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1690908806730</updated>
+    </task>
+    <task id="LOCAL-00049" summary="made normaly">
+      <option name="closed" value="true" />
+      <created>1690908983297</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1690908983297</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -447,9 +461,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="fixed imports" />
-    <MESSAGE value="fixed small bugs , updated run method , deleted doBetterResults method" />
-    <MESSAGE value="update calibrateTopic method" />
     <MESSAGE value="updated askQuestion method , added new map ..." />
     <MESSAGE value="update text" />
     <MESSAGE value="updated text" />
@@ -472,7 +483,10 @@
     <MESSAGE value="added list for questions" />
     <MESSAGE value="deleted" />
     <MESSAGE value="made constants" />
-    <option name="LAST_COMMIT_MESSAGE" value="made constants" />
+    <MESSAGE value="added gets and sets in Topic .Deleted maps , fixed run method , changed askQuestion method with List" />
+    <MESSAGE value="made normal" />
+    <MESSAGE value="made normaly" />
+    <option name="LAST_COMMIT_MESSAGE" value="made normaly" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

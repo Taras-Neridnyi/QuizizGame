@@ -1,7 +1,5 @@
 package quiz;
 
-
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,7 +29,6 @@ class Quiziz {
     Question football2 = new Question("Зінченко у команді .......", "Арсенал");
     Question football3 = new Question("Гравців у полі ..", "22");
 
-
     List<Question> questionListMath = new LinkedList<>(List.of(
             math1, math2, math3
     ));
@@ -43,7 +40,6 @@ class Quiziz {
     List<Question> questionListFootball = new LinkedList<>(List.of(
             football1, football2, football3
     ));
-
     final Topic MATH_TOPIC = new Topic("Math", questionListMath);
     final Topic FOOTBALL_TOPIC = new Topic("Football", questionListFootball);
     final Topic PROGRAMMING_TOPIC = new Topic("Programming", questionListProgramming);
@@ -51,8 +47,6 @@ class Quiziz {
     List<Topic> topics = new LinkedList<>(List.of(
             MATH_TOPIC, PROGRAMMING_TOPIC, FOOTBALL_TOPIC
     ));
-
-
 /*
         getters and setters
      */
@@ -85,12 +79,11 @@ class Quiziz {
         other methods
      */
     protected void run() {
-        String userResponse = "";
         boolean status = true;
         Scanner scanner = new Scanner(System.in);
         askUsername();
         greet();
-        while (status & !(userResponse.equals("n"))) {
+        while (status) {
             askTopic();
             askQuestion();
             if (!(getScore() == 3)) {
@@ -100,9 +93,9 @@ class Quiziz {
                         y -> так/yes
                         n -> ні/no""");
                 System.out.print("Введіть : ");
-               String s = scanner.nextLine();
-               status = !s.equals("n");
-            }else{
+                String s = scanner.nextLine();
+                status = !s.equals("n");
+            } else {
                 status = false;
             }
         }
@@ -122,7 +115,6 @@ class Quiziz {
                  Це Quiz zoo гра !
                 """);
     }
-
 
     private void askTopic() {
         Scanner scanner = new Scanner(System.in);
@@ -148,7 +140,7 @@ class Quiziz {
             line();
             setTopic(PROGRAMMING_TOPIC);
         } else {
-           askTopic();
+            askTopic();
         }
     }
 
