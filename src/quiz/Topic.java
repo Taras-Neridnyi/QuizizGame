@@ -1,12 +1,26 @@
 package quiz;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Topic {
 
-    private String title ;
+    List<Question> questionList = new LinkedList<>();
 
-    private final String MATH_TOPIC = "Math";
-    private final String PROGRAMMING_TOPIC = "Programming";
-    private final String FOOTBALL_TOPIC = "Football";
+    Topic (){
+    }
+
+    Topic(String title , Question question){
+        setTitle(title);
+    }
+    Topic(String title){
+        setTitle(title);
+    }
+    Topic(String title , List<Question> questionList){
+        this.questionList = questionList;
+    }
+
+    private String title ;
 
     public String getTitle() {
         return title;
@@ -15,4 +29,21 @@ public class Topic {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public List<Question> getQuestions() {
+        return questionList;
+    }
+
+    public void setQuestions(List<Question> questionList) {
+        this.questionList = questionList;
+    }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "title='" + title + '\'' +
+                '}';
+    }
 }
+
+// check something 3

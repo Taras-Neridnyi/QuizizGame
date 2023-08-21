@@ -1,5 +1,7 @@
 package quiz;
 
+import java.util.Scanner; 
+
 public class GameSession {
 
     public GameSession(int score, String playerName, Topic selectedTopic) {
@@ -24,7 +26,7 @@ public class GameSession {
     }
 
     public String getPlayerName() {
-        return playerName;
+        return playerName; 
     }
 
     public void setPlayerName(String playerName) {
@@ -37,5 +39,25 @@ public class GameSession {
 
     public void setSelectedTopic(Topic selectedTopic) {
         this.selectedTopic = selectedTopic;
+    }
+
+
+    protected void greet() {
+        System.out.println("\nПривіт " + getPlayerName() + """
+                 Це Quiz zoo гра !
+                """);
+    }
+    protected String askUsername() {
+        line();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Перед тим як почати , напишіть своє ім'я :  ");
+        String name = scanner.nextLine();
+        setPlayerName(name);
+        return name;
+    }
+        protected void line() {
+            System.out.println("-".repeat(50));
+
+
     }
 }
